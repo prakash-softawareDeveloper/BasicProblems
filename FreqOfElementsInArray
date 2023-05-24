@@ -1,0 +1,19 @@
+public class Solution {
+    public int[] solve(int[] A) {
+        int N=A.length;
+        int count;
+        int C[]=new int[N];
+        for(int i=0;i<N;i++){
+            count=1;
+            for(int j=0;j<N;j++){
+                if(i!=j){
+                    if(A[i]==A[j]){
+                        count++;
+                    }
+                }
+            }
+            C[i]=count;
+        }
+        return C;
+    }
+}
