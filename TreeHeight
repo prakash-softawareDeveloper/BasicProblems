@@ -1,0 +1,13 @@
+
+public class Solution {
+    public int solve(TreeNode A) {
+        if(A == null){
+return 0;
+}
+
+int lh = solve(A.left);
+int rh = solve(A.right);
+
+return Math.max(lh,rh) + 1;
+    }
+}
