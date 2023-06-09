@@ -1,0 +1,29 @@
+public class Solution {
+    int i=0;
+    public int[] inorderTraversal(TreeNode A) {
+        int N=size(A);
+        int[]ans=new int[N];
+        traversal(A,ans);
+        return ans;  //returning array  
+    }
+    //to calculate number of nodes so that we have size for array
+    public int size(TreeNode A){
+        if(A==null){
+            return 0;
+        }
+        int ls=size(A.left);
+        int rs=size(A.right);
+        int s=ls+rs+1;
+        return s;
+    }
+    //doing inorder traversal of its nodes' values and storing it in ans
+    public void traversal(TreeNode root,int[]ans){
+        if(root==null){
+            return;
+        }
+        traversal(root.left,ans);
+        ans[i]=root.val;
+        i=i+1;
+        traversal(root.right,ans);
+    }
+}
