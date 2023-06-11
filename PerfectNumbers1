@@ -1,0 +1,16 @@
+public class Solution {
+    public String solve(int A) {
+               Queue<String>q = new LinkedList<>();
+        q.add("11");
+        q.add("22");
+        String val ="";
+        for(int i=1;i<=A;i++){
+            val = q.peek();
+            q.add(val.substring(0,val.length()/2)+"11"+val.substring(val.length()/2));
+            q.add(val.substring(0,val.length()/2)+"22"+val.substring(val.length()/2));
+            val = q.peek();
+            q.poll();
+        }
+        return val;
+    }
+}
