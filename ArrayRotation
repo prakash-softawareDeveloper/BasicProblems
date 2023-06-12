@@ -1,0 +1,36 @@
+public class Solution {
+        
+    public int[] solve(int[] A, int B) {
+        int n=A.length;
+        if(B>n){
+                B=B%n;
+        }
+        int p1=0,p2=n-1;
+        while(p1<p2){
+            int temp=A[p1];
+             A[p1]=A[p2];
+             A[p2]=temp;
+             p1++;
+             p2--;
+        }
+        p1=0;
+        p2=B-1;
+        while(p1<p2){
+            int temp=A[p1];
+             A[p1]=A[p2];
+             A[p2]=temp;
+             p1++;
+             p2--;
+        }
+        p1=B;
+        p2=n-1;
+        while(p1<p2){
+            int temp=A[p1];
+             A[p1]=A[p2];
+             A[p2]=temp;
+             p1++;
+             p2--;
+        }
+        return A;
+    }
+}
