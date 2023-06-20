@@ -1,0 +1,34 @@
+import java.util.*;
+public class MyClass {
+    public static int polindrome(String str,int p1,int p2){
+        int n=str.length();
+        int i=p1,j=p2;
+        while((p1>=0 && p2<n) && (i>=0 &&j<n)){
+             Character ch1=str.charAt(p1);
+             Character ch2=str.charAt(p2);
+            if(ch1.equals(ch2)){
+            p1--;
+            p2++;
+        }
+        i--;
+        j++;
+        }
+        return p2-p1-1;
+    }
+    public static void main(String args[]) {
+     Scanner sc=new Scanner(System.in);
+      String str=sc.nextLine();
+      int n=str.length();
+      int idx=0,idx1=0,idx2=1,ans=0; 
+          while(idx>=0 && idx<n){
+              ans=Math.max(ans,polindrome(str,idx,idx));
+              idx++; 
+          }
+          while(idx1>=0 && idx2<n){
+              ans=Math.max(ans,polindrome(str,idx1,idx2));
+              idx1++;
+              idx2++;
+          }
+      System.out.print(ans);
+    }
+}
