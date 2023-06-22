@@ -1,0 +1,34 @@
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int ans=0,lessCount=0;
+        int a[]=new int[n];
+      for(int i=0;i<n;i++){
+          a[i]=sc.nextInt();
+      }
+      int pf[]=new int[n];
+      pf[0]=a[0];
+      for(int i=1;i<n;i++){
+          pf[i]=pf[i-1]+a[i];
+      }
+      HashMap<Integer,Integer> map=new HashMap<>();
+      for(int i=0;i<n;i++){
+          if(map.containsKey(pf[i])){
+              //map.merge(a[i],1,(oldValue,newValue)->oldValue+newValue);
+              map.put(pf[i],(map.get(pf[i])+1));
+          }
+          else{
+              map.put(pf[i],1);
+          }
+      }
+      for(int i=0;i<n;i++){
+          if(map.get(pf[i]) > 1 || (map.containsKey(0))){
+              System.out.print("Yes");
+              break;
+          }
+      }
+      
+}
+}
