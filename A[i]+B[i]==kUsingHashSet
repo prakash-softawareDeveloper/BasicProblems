@@ -1,0 +1,28 @@
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+      Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+         int a[]=new int[n];
+      for(int i=0;i<n;i++){
+          a[i]=sc.nextInt();
+      }
+      int t=0;
+      int k=sc.nextInt();
+       HashSet<Integer> set=new HashSet<>();
+       for(int i=0;i<n;i++){
+           int temp=k-a[i];
+           if(set.contains(temp)){
+               System.out.print(i+"Yes");
+               t=1;
+               break;
+           }
+           else{
+               set.add(a[i]);
+           }
+       }
+       if(t==0){
+            System.out.print("No");
+       }
+    }
+}
