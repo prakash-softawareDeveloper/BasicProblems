@@ -1,0 +1,44 @@
+import java.util.*;
+public class MyClass {
+    public static void main(String args[]) {
+     HashMap<String,Integer> map=new HashMap<String,Integer>();
+     map.put("Prakash",10);
+     map.put("Muthusamy",15);
+     map.put("Muthusamy",10);
+     map.put("Mohana",10);
+     map.put("Siva",10);
+     System.out.println(map);
+     System.out.print(map.size());
+     System.out.println(map.containsKey("Muthusamy"));
+     map.put("Mahesh",11);
+     System.out.println(map);
+     map.remove("Siva");
+     System.out.println(map);
+     map.replace("Mahesh", 50);
+     System.out.println(map);
+     HashMap<Integer,String> map1=new HashMap<Integer,String>();
+     map1.put(1,"Suganesu");
+     System.out.println(map1);
+     map1.put(1,"Boopathi");
+     System.out.println(map1);
+     System.out.println(map1.containsKey(1));
+     HashMap<String,Integer> map2=new HashMap<String,Integer>();
+     map2=(HashMap)map1.clone();
+     System.out.println(map2);
+     
+     HashSet<Integer>set=new HashSet<Integer>();
+     set.add(1);
+     set.add(2);
+     set.add(3);
+     set.add(4);
+     System.out.println(set);
+     set.remove(2);
+     System.out.println(set);
+     System.out.println(set.contains(1));
+     System.out.println(set.size());
+     System.out.println(set.isEmpty());
+     HashSet<Integer> clonedSet=new HashSet<Integer>();
+     clonedSet=(HashSet)set.clone();
+     System.out.println(clonedSet);
+    }
+}
