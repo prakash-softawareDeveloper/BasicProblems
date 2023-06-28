@@ -1,0 +1,12 @@
+import java.util.*;
+public class Student{
+    int x,y;
+     Student(int x,int y){
+         this.x=x;
+         this.y=y;
+        System.out.println (x+" "+y);
+    }
+    public static void main(String[] args) {
+        Student st1=new Student(5,6);
+    }
+}
