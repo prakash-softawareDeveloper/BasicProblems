@@ -1,0 +1,26 @@
+import java.util.*;
+public class Student {
+    int id;
+    String name;
+    int m1,m2,m3;
+    int totalmarks(){
+        return m1+m2+m3;
+    }
+    int maxMarks(){
+        return Math.max(m1,Math.max(m2,m3));
+    }
+    void printName(){
+        System.out.println(name);
+    }
+    public static void main(String args[]) {
+      Student st1=new Student();
+      st1.id=1;
+      st1.name="Prakash";
+      st1.m1=10;
+      st1.m2=20;
+      st1.m3=30;
+      System.out.println(st1.totalmarks());
+      System.out.println(st1.maxMarks());
+      st1.printName();
+    }
+}
