@@ -1,0 +1,38 @@
+public class Solution {
+    public int solve(String A) {
+        Stack<Character> stack = new Stack();
+        for(int i=0; i<A.length(); i++)
+        {
+            char str = A.charAt(i);
+            if(stack.empty())
+            {
+                stack.push(str);
+            }
+            else
+            {
+                switch(str)
+                {
+                    case ']' :
+                    if(stack.peek()=='[')
+                    stack.pop();
+                    break;
+                   
+                    case '}' :
+                    if(stack.peek()=='{')
+                    stack.pop();
+                    break;
+                   
+                    case ')' :
+                    if(stack.peek()=='(')
+                    stack.pop();
+                    break;
+                   
+                    default:
+                    stack.push(str);
+                    break;
+                }
+            }
+        }
+        return stack.empty()? 1:0;
+    }
+}
