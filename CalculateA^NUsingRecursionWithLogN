@@ -1,0 +1,26 @@
+import java.util.*;
+public class MyClass {
+    public static int numPow(int num,int pow){
+        if(pow==0){
+            return 1;
+        }
+        if(pow==1){
+            return num;
+        }
+        if(pow%2==0){
+          int  ha=numPow(num,pow/2);
+            return ha*ha;
+        }
+        else{
+           int he=numPow(num,pow/2);
+            return he*he*num;
+        }
+    } 
+    public static void main(String args[]) {
+      Scanner sc=new Scanner(System.in);
+      int num=sc.nextInt();
+      int pow=sc.nextInt();
+      int ans=numPow(num,pow);
+      System.out.print(ans);
+    }
+}
