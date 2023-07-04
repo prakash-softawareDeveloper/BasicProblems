@@ -1,0 +1,21 @@
+public class Solution {
+    int prev=Integer.MIN_VALUE;
+    int ans=1;
+    public int isValidBST(TreeNode A) {
+        BST(A);
+        return ans;
+    }
+    public void BST(TreeNode A)
+    {
+        if(A==null)
+            return;
+        BST(A.left);
+        if(prev>=A.val)
+        {
+            ans=0;
+            return;
+        }
+        prev=A.val;
+        BST(A.right);
+    }
+}
